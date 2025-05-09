@@ -1,0 +1,4 @@
+build:
+  install: npm install --legacy-peer-deps
+  commands:
+    - npm run build
