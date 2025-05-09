@@ -19,9 +19,8 @@ async function bootstrap() {
    .setVersion('1.0')
    .build();
  const document = SwaggerModule.createDocument(app, config);
- SwaggerModule.setup('greeka', app, document); // Swagger UI available at /api
+ SwaggerModule.setup('greeka', app, document); 
 
-  //? Swagger set up 
   
   await app.listen(3000);
 }

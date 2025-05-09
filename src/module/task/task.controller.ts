@@ -3,13 +3,13 @@ import { CreateTaskDto, ListTasksDto, UpdateTaskDto } from 'src/dtos/task.dto';
 import { TaskService } from './task.service';
 import { ApiTags, ApiBody, ApiResponse } from '@nestjs/swagger';
 
-@ApiTags('Tasks') // This will categorize all the endpoints under the "User" tag in Swagger UI
+@ApiTags('Tasks') 
 @Controller('task')
 export class TaskController {
   constructor(private readonly taskservice: TaskService) {}
 
   @Post('create-task')
-  @ApiBody({ type: CreateTaskDto }) // Add Swagger body documentation for request
+  @ApiBody({ type: CreateTaskDto })
   @ApiResponse({ status: 201, description: 'Task successfully created' })
   @ApiResponse({ status: 400, description: 'Bad request' })
   async createTask(@Body() body: CreateTaskDto) {
@@ -17,7 +17,7 @@ export class TaskController {
   }
 
   @Patch('update-task')
-  @ApiBody({ type: UpdateTaskDto }) // Add Swagger body documentation for request
+  @ApiBody({ type: UpdateTaskDto })
   @ApiResponse({ status: 200, description: 'Task successfully updated' })
   @ApiResponse({ status: 400, description: 'Bad request' })
   async updateTask(@Body() updateTaskDto: UpdateTaskDto) {
@@ -33,7 +33,7 @@ export class TaskController {
   }
 
   @Post('list-task')
-  @ApiBody({ type: ListTasksDto }) // Add Swagger body documentation for request
+  @ApiBody({ type: ListTasksDto }) 
   @ApiResponse({ status: 200, description: 'List of tasks', type: [Object] })
   @ApiResponse({ status: 400, description: 'Bad request' })
   async listTasks(@Body() listTasksDto: ListTasksDto) {

@@ -9,7 +9,7 @@ import { JwtModule } from '@nestjs/jwt';
   imports: [
     TaskModule,
     JwtModule.register({
-      global: true, // 👈 This makes it available app-wide
+      global: true,
       secret: 'greeka',
       signOptions: { expiresIn: '1h' },
     }),
